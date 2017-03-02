@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Document Upload</title>
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+    </head>
+    
+    
+    <script>
+
+	function validate_fileUpload()
+	{
+		fileName = document.getElementById("file").value; 
+		
+		var isValid = true;
+		
+		if (fileName.length == 0)
+		{
+			alert("Please select file");
+			
+			isValid = false;
+			
+			return isValid;
+		}
+		else
+		{
+			alert("File Selected = " + fileName + " & Size = " + document.getElementById("file").files[0].size +" bytes");
+			
+			return isValid;
+		}
+	}
+		
+	</script>       
+    
+    <body>
+        <form method="post" action="FileUpload" enctype="multipart/form-data" onsubmit = "return validate_fileUpload()"  >
+       
+            
+            File Id:
+            <input type = "text" name = "id">
+            <br/>
+            <br/>
+            File:
+            <input type="file" name="filename" id="file" /> 
+            <br/>
+            <br/>       
+            <input type="submit" value="Upload" name="upload" id="upload"/>
+            
+       </form>
+       
+    </body>
+</html>
